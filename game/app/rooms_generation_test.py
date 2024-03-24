@@ -36,3 +36,11 @@ def test__should_generate_three_rooms__when_three_rooms_should_be_generated():
     result = rooms_generator.generate_rooms(3)
 
     assert len(result) == 3
+
+
+def test__should_generate_three_different_rooms__when_three_rooms_should_be_generated():
+    rooms_generator = RoomsGenerator()
+
+    result = rooms_generator.generate_rooms(3)
+
+    assert len(result) == len(set(result))
