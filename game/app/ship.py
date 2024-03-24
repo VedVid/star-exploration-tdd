@@ -24,3 +24,5 @@ class Ship:
         self.max_hp = max_hp
         if self.max_hp < MIN_HP:
             self.max_hp = MIN_HP
+        elif self.max_hp > MAX_HP:
+            self.max_hp = MAX_HP
