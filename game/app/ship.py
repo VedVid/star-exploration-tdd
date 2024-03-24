@@ -17,3 +17,5 @@ class Ship:
         elif self.defense > DEFENSE_MAX:
             self.defense = DEFENSE_MAX
         self.cargo_space = cargo_space
+        if self.cargo_space < CARGO_MIN:
+            self.cargo_space = CARGO_MIN
