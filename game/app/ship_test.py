@@ -90,25 +90,25 @@ def test__should_cargo_space_be_empty__when_ship_is_newly_created():
 def test__should_set_max_hp_to_min__when_max_hp_is_set_below_min_value():
     """Ship should not have max hp lower than minimum specified in ship_variables file."""
 
-    ship = Ship(max_hp=MIN_HP-1)
+    ship = Ship(max_hp=HP_MIN-1)
 
-    assert ship.max_hp == MIN_HP
+    assert ship.max_hp == HP_MIN
 
 
 def test__should_set_max_hp_to_max__when_max_hp_is_set_over_max_value():
     """Ship should not have max hp higher than maximum specified in ship_variables file."""
 
-    ship = Ship(max_hp=MAX_HP+1)
+    ship = Ship(max_hp=HP_MAX+1)
 
-    assert ship.max_hp == MAX_HP
+    assert ship.max_hp == HP_MAX
 
 
 def test__should_not_interfere_to_max_hp__when_max_hp_is_in_range():
     """If ship max hp is within ranges specified in ship_variables file, then game should not interfere."""
 
-    ship = Ship(max_hp=MIN_HP)
+    ship = Ship(max_hp=HP_MIN)
 
-    assert ship.max_hp == MIN_HP
+    assert ship.max_hp == HP_MIN
 
 
 def test__should_current_hp_be_equal_to_max_hp__when_ship_is_newly_created():

@@ -20,7 +20,7 @@ class Ship:
         Space for transporting cargo. Can't be lower than CARGO_MIN and can't be higher than CARGO_MAX
         that are specified in ship_variables.
     max_hp : int
-        Max health points of ship. Can't be lower than MIN_HP and can't be higher than MAX_HP that are specified
+        Max health points of ship. Can't be lower than HP_MIN and can't be higher than HP_MAX that are specified
         in ship_variables.
 
     Attributes
@@ -37,14 +37,14 @@ class Ship:
     cargo : list of ??? (not specified yet)
         List of currently transported cargo. Should not be longer than value of cargo_space.
     max_hp : int
-        Max health points of ship. Can't be lower than MIN_HP and can't be higher than MAX_HP that are specified
+        Max health points of ship. Can't be lower than HP_MIN and can't be higher than HP_MAX that are specified
         in ship_variables.
     current_hp : int
         Current health points of ship. Can't be higher than its max_hp. If current_hp of player's ship is lower than 0,
         then the game ends.
     """
 
-    def __init__(self, attack=ATTACK_MIN, defense=DEFENSE_MIN, cargo_space=CARGO_MIN, max_hp=MIN_HP):
+    def __init__(self, attack=ATTACK_MIN, defense=DEFENSE_MIN, cargo_space=CARGO_MIN, max_hp=HP_MIN):
         self.attack = attack
         if self.attack < ATTACK_MIN:
             self.attack = ATTACK_MIN
@@ -62,8 +62,8 @@ class Ship:
             self.cargo_space = CARGO_MAX
         self.cargo = []
         self.max_hp = max_hp
-        if self.max_hp < MIN_HP:
-            self.max_hp = MIN_HP
-        elif self.max_hp > MAX_HP:
-            self.max_hp = MAX_HP
+        if self.max_hp < HP_MIN:
+            self.max_hp = HP_MIN
+        elif self.max_hp > HP_MAX:
+            self.max_hp = HP_MAX
         self.current_hp = self.max_hp
