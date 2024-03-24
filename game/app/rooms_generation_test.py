@@ -53,7 +53,7 @@ def test__should_rooms_available_be_empty__when_no_fill_rooms_available_called()
     assert rooms_generator._rooms_available is None
 
 
-def test__should_rooms_available_be_filled__hen_fill_rooms_available_called():
+def test__should_rooms_available_be_filled__when_fill_rooms_available_called():
     rooms_generator = RoomsGenerator()
 
     rooms_generator.fill_rooms_available()
