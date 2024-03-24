@@ -19,3 +19,5 @@ class Ship:
         self.cargo_space = cargo_space
         if self.cargo_space < CARGO_MIN:
             self.cargo_space = CARGO_MIN
+        elif self.cargo_space > CARGO_MAX:
+            self.cargo_space = CARGO_MAX
