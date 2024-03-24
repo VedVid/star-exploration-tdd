@@ -59,3 +59,9 @@ def test__should_not_interfere_to_max_cargo_space__when_max_cargo_space_is_in_ra
     ship = Ship(cargo_space=CARGO_MIN)
 
     assert ship.cargo_space == CARGO_MIN
+
+
+def test__should_not_interfere_to_max_hp__when_max_hp_is_in_range():
+    ship = Ship(max_hp=MIN_HP)
+
+    assert ship.max_hp == MIN_HP
