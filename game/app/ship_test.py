@@ -41,3 +41,9 @@ def test__should_not_interfere_to_defense_value__when_defense_is_in_range():
     ship = Ship(defense=DEFENSE_MIN)
 
     assert ship.defense == DEFENSE_MIN
+
+
+def test__should_not_interfere_to_max_cargo_space__when_max_cargo_space_is_in_range():
+    ship = Ship(cargo_space=CARGO_MIN)
+
+    assert ship.cargo_space == CARGO_MIN
