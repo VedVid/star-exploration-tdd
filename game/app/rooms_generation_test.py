@@ -44,3 +44,9 @@ def test__should_generate_three_different_rooms__when_three_rooms_should_be_gene
     result = rooms_generator.generate_rooms(3)
 
     assert len(result) == len(set(result))
+
+
+def test__should_rooms_available_be_empty__when_no_fill_rooms_available_called():
+    rooms_generator = RoomsGenerator()
+
+    assert rooms_generator._rooms_available is None
