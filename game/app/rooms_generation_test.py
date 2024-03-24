@@ -59,3 +59,10 @@ def test__should_rooms_available_be_filled__when_fill_rooms_available_called():
     rooms_generator.fill_rooms_available()
 
     assert rooms_generator._rooms == rooms_generator._rooms_available
+
+
+def test__should_raise_error__when_amount_of_rooms_to_be_generated_is_larger_than_length_of_rooms_list():
+    rooms_generator = RoomsGenerator()
+
+    with pytest.raises(IndexError):
+        rooms_generator.generate_rooms(999)
