@@ -20,6 +20,9 @@ class RoomsGenerator:
     _rooms = [SPACE_STATION, PLANET_BASE, SPACE]
     _rooms_available = None
 
+    def fill_rooms_available(self):
+        self._rooms_available = self._rooms[:]
+
     def choose_room_randomly(self):
         """
         Returns random room from _rooms class list. It is used by generate_rooms method.
