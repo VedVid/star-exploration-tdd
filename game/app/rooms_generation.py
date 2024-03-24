@@ -10,5 +10,5 @@ class RoomsGenerator:
 
     _rooms = [SPACE_STATION, PLANET_BASE, SPACE]
 
-    def generate(self):
+    def choose_room_randomly(self):
         return choice(self._rooms)
