@@ -45,6 +45,8 @@ class RoomsGenerator:
             List of generated rooms.
         """
         new_rooms = []
+        if amount == len(self._rooms):
+            return self._rooms[:]
         while amount > 0:
             new_room = self.choose_room_randomly()
             if new_room in new_rooms:
