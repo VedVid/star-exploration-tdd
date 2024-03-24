@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+
+
+ATTACK_MIN = 1
+ATTACK_MAX = 10
+DEFENSE_MIN = 0
+DEFENSE_MAX = 8
+CARGO_MIN = 1
+CARGO_MAX = 8
+HP_MIN = 50
+HP_MAX = 250
