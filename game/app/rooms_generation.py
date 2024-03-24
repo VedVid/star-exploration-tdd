@@ -45,8 +45,10 @@ class RoomsGenerator:
             List of generated rooms.
         """
         new_rooms = []
+        # Small optimization: return copy of class _rooms if its length is equal to amount of rooms to be generated.
         if amount == len(self._rooms):
             return self._rooms[:]
+        # Otherwise, we generate rooms by randomly choosing room to append the list.
         while amount > 0:
             new_room = self.choose_room_randomly()
             if new_room in new_rooms:
