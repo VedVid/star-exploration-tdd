@@ -5,7 +5,7 @@ from ship_variables import *
 
 
 class Ship:
-    def __init__(self, attack=ATTACK_MIN, defense=DEFENSE_MIN):
+    def __init__(self, attack=ATTACK_MIN, defense=DEFENSE_MIN, cargo_space=CARGO_MIN):
         self.attack = attack
         if self.attack < ATTACK_MIN:
             self.attack = ATTACK_MIN
@@ -16,3 +16,4 @@ class Ship:
             self.defense = DEFENSE_MIN
         elif self.defense > DEFENSE_MAX:
             self.defense = DEFENSE_MAX
+        self.cargo_space = cargo_space
