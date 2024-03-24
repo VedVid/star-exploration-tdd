@@ -14,3 +14,5 @@ class Ship:
         self.defense = defense
         if self.defense < DEFENSE_MIN:
             self.defense = DEFENSE_MIN
+        elif self.defense > DEFENSE_MAX:
+            self.defense = DEFENSE_MAX
