@@ -15,12 +15,19 @@ class RoomsGenerator:
     ----------
     _rooms : list of strings
         Contains every possible type of room to generate.
+    _rooms_available : Union[list of strings, None]
+        Copies _rooms content at the start of generate_rooms method. choose_room_randomly uses this list to pop
+        random rooms.
     """
 
     _rooms = [SPACE_STATION, PLANET_BASE, SPACE]
     _rooms_available = None
 
     def fill_rooms_available(self):
+        """
+        Fills _rooms_available with values copied from _rooms. Necessary to allow shuffling and popping rooms
+        by choose_room_randomly method.
+        """
         self._rooms_available = self._rooms[:]
 
     def choose_room_randomly(self):
