@@ -22,3 +22,5 @@ class Ship:
         elif self.cargo_space > CARGO_MAX:
             self.cargo_space = CARGO_MAX
         self.max_hp = max_hp
+        if self.max_hp < MIN_HP:
+            self.max_hp = MIN_HP
