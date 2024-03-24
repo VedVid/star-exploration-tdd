@@ -11,3 +11,9 @@ def test__should_set_ship_attack_to_min__when_attack_set_below_min_value():
     ship = Ship(attack=ATTACK_MIN-1)
 
     assert ship.attack == ATTACK_MIN
+
+
+def test__should_set_ship_attack_to_max__when_attack_set_over_max_value():
+    ship = Ship(attack=ATTACK_MAX+1)
+
+    assert ship.attack == ATTACK_MAX
