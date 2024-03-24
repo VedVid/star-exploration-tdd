@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from random import choice
+from random import shuffle
 
 from room_types import *
 
@@ -32,7 +32,9 @@ class RoomsGenerator:
         room : string
             Randomly chosen room from _rooms class attribute.
         """
-        return choice(self._rooms)
+        print(self._rooms_available)
+        shuffle(self._rooms_available)
+        return self._rooms_available.pop()
 
     def generate_rooms(self, amount):
         """
@@ -53,10 +55,9 @@ class RoomsGenerator:
         if amount == len(self._rooms):
             return self._rooms[:]
         # Otherwise, we generate rooms by randomly choosing room to append the list.
+        self.fill_rooms_available()
         while amount > 0:
             new_room = self.choose_room_randomly()
-            if new_room in new_rooms:
-                continue
-            new_rooms.append(self.choose_room_randomly())
+            new_rooms.append(new_room)
             amount -= 1
         return new_rooms
