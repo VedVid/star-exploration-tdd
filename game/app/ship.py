@@ -9,3 +9,5 @@ class Ship:
         self.attack = attack
         if self.attack < ATTACK_MIN:
             self.attack = ATTACK_MIN
+        elif self.attack > ATTACK_MAX:
+            self.attack = ATTACK_MAX
