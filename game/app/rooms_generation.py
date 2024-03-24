@@ -18,6 +18,7 @@ class RoomsGenerator:
     """
 
     _rooms = [SPACE_STATION, PLANET_BASE, SPACE]
+    _rooms_available = None
 
     def choose_room_randomly(self):
         """
