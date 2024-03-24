@@ -2,4 +2,6 @@
 
 
 class RoomsGenerator:
-    pass
+
+    def generate(self):
+        return "room"
