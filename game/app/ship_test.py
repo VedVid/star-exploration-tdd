@@ -67,6 +67,12 @@ def test__should_set_max_hp_to_min__when_max_hp_is_set_below_min_value():
     assert ship.max_hp == MIN_HP
 
 
+def test__should_set_max_hp_to_max__when_max_hp_is_set_over_max_value():
+    ship = Ship(max_hp=MAX_HP+1)
+
+    assert ship.max_hp == MAX_HP
+
+
 def test__should_not_interfere_to_max_hp__when_max_hp_is_in_range():
     ship = Ship(max_hp=MIN_HP)
 
