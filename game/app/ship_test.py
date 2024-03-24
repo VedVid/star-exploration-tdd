@@ -23,3 +23,7 @@ def test__should_not_interfere_to_attack_value__when_attack_is_in_range():
     ship = Ship(attack=ATTACK_MIN+1)
 
     assert ship.attack == ATTACK_MIN + 1
+def test__should_not_interfere_to_defense_value__when_defense_is_in_range():
+    ship = Ship(attack=ATTACK_MIN, defense=DEFENSE_MIN)
+
+    assert ship.defense == DEFENSE_MIN
