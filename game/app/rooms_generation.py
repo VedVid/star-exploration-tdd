@@ -12,3 +12,10 @@ class RoomsGenerator:
 
     def choose_room_randomly(self):
         return choice(self._rooms)
+
+    def generate_rooms(self, amount):
+        new_rooms = []
+        while amount > 0:
+            new_rooms.append(self.choose_room_randomly())
+            amount -= 1
+        return new_rooms
