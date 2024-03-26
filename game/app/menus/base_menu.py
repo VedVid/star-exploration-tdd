@@ -57,6 +57,7 @@ class BaseMenu:
             raise ValueError("Non-empty list of options expected.")
         for index, option in enumerate(self.options, start=1):
             print(f"{index}) {option}")
+        print()
 
     def take_input(self):
         v = input("> ")
