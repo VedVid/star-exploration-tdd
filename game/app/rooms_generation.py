@@ -3,7 +3,7 @@
 
 from random import shuffle
 
-from room_types import *
+from . room_types import *
 
 
 class RoomsGenerator:

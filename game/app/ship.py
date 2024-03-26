@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from ship_variables import *
+from . ship_variables import *
 
 
 class Ship:
