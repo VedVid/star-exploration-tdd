@@ -23,7 +23,7 @@ def test__should_set_options__when_setter_for_options_called():
 
     menu = BaseMenu()
 
-    menu.set_options("aaaaa", "bbbbb", "ccccc")
+    menu.set_options(["aaaaa", "bbbbb", "ccccc"])
 
     assert len(menu.options) == 3
 
