@@ -15,6 +15,9 @@ class BaseMenu:
     def set_options(self, *args):
         self.options = list(args)
 
+    def print_header(self):
+        print(f"{self.header.capitalize()}\n")
+
     def print_options(self):
         if not self.options:
             raise ValueError("Non-empty list of options expected.")
