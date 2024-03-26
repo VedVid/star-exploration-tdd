@@ -32,12 +32,12 @@ class BaseMenu:
         """Sets menu's header."""
         self.header = header
 
-    def set_options(self, *args):
+    def set_options(self, options):
         """
         Sets menu's options.
-        Takes args tuple as argument, then transforms it to the list and binds to self.options.
+        Takes list as argument and binds to self.options.
         """
-        self.options = list(args)
+        self.options = options
 
     @staticmethod
     def print_separator():
@@ -49,18 +49,20 @@ class BaseMenu:
 
     def print_header(self):
         """Prints header in all caps."""
-        print(f"{self.header.capitalize()}\n")
+        print(f"{self.header.upper()}\n")
 
     def print_options(self):
         """Prints all options. Raises ValueError if list of options is empty."""
         if not self.options:
             raise ValueError("Non-empty list of options expected.")
         for index, option in enumerate(self.options, start=1):
-            print(f"{index}) {option}\n")
+            print(f"{index}) {option}")
 
     def handle_option(self):
         """
         Children of BaseMenu will use this method to handle options,
         by executing functions binded to the specific options.
         """
-        raise NotImplementedError("This is BaseMenu, handle_option method is not implemented here.")
+        raise NotImplementedError(
+            "This is BaseMenu, handle_option method is not implemented here."
+        )

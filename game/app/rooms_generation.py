@@ -3,7 +3,7 @@
 
 from random import shuffle
 
-from . room_types import *
+from .room_types import *
 
 
 class RoomsGenerator:
@@ -39,7 +39,6 @@ class RoomsGenerator:
         room : string
             Randomly chosen room from _rooms class attribute.
         """
-        print(self._rooms_available)
         shuffle(self._rooms_available)
         return self._rooms_available.pop()
 
