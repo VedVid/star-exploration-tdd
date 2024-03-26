@@ -13,7 +13,7 @@ class BaseMenu:
         self.header = header
 
     def set_options(self, *args):
-        self.options = args
+        self.options = list(args)
 
     def print_options(self):
         if not self.options:
