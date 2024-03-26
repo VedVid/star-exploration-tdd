@@ -21,7 +21,7 @@ def test__should_set_options__when_setter_for_options_called():
     assert len(menu.options) == 3
 
 
-def test__should_not_raise_exceptions__when_print_header_method_called():
+def test__should_set_header__when_set_header_method_called():
     menu = BaseMenu()
 
     menu.set_header("HEADER")
