@@ -8,6 +8,9 @@ class BaseMenu:
         if self.options is None:
             self.options = []
 
+    def set_options(self, *args):
+        self.options = args
+
     def print_options(self):
         if not self.options:
             raise ValueError("Non-empty list of options expected.")
