@@ -49,7 +49,7 @@ class BaseMenu:
 
     def print_header(self):
         """Prints header in all caps."""
-        print(f"{self.header.upper()}")
+        print(f"{self.header.upper()}\n")
 
     def print_options(self):
         """Prints all options. Raises ValueError if list of options is empty."""

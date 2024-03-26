@@ -19,7 +19,7 @@ if __name__ == "__main__":
     )
     rooms = rooms_generator.generate_rooms(randint(1, 3))
     m = BaseMenu()
-    m.set_header("You boarded your brand-new Explorer-class starship.\nWhere will you go?\n")
+    m.set_header("You boarded your brand-new Explorer-class starship.\nWhere will you go?")
     m.set_options(rooms)
     m.print_separator()
     m.print_header()
