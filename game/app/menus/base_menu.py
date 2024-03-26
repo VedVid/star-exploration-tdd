@@ -15,6 +15,10 @@ class BaseMenu:
     def set_options(self, *args):
         self.options = list(args)
 
+    @staticmethod
+    def print_separator():
+        print("*********\n")
+
     def print_header(self):
         print(f"{self.header.capitalize()}\n")
 
