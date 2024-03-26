@@ -20,13 +20,7 @@ if __name__ == "__main__":
     rooms = rooms_generator.generate_rooms(randint(1, 3))
     m = BaseMenu()
     m.set_header("You boarded your brand-new Explorer-class starship.\nWhere will you go?\n")
-    match len(rooms):
-        case 3:
-            m.set_options(rooms[0], rooms[1], rooms[2])
-        case 2:
-            m.set_options(rooms[0], rooms[1])
-        case 1:
-            m.set_options(rooms[0])
+    m.set_options(rooms)
     m.print_separator()
     m.print_header()
     m.print_options()
