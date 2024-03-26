@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from . ship_variables import *
+from .ship_variables import *
 
 
 class Ship:
@@ -44,7 +44,13 @@ class Ship:
         then the game ends.
     """
 
-    def __init__(self, attack=ATTACK_MIN, defense=DEFENSE_MIN, cargo_space=CARGO_MIN, max_hp=HP_MIN):
+    def __init__(
+        self,
+        attack=ATTACK_MIN,
+        defense=DEFENSE_MIN,
+        cargo_space=CARGO_MIN,
+        max_hp=HP_MIN,
+    ):
         self.attack = attack
         if self.attack < ATTACK_MIN:
             self.attack = ATTACK_MIN

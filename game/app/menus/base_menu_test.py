@@ -42,5 +42,8 @@ def test__should_raise_not_implemented__when_handle_option_method_called():
     """Game should raise NotImplementedError – player should not access BaseMenu directly."""
     menu = BaseMenu()
 
-    with pytest.raises(NotImplementedError, match="This is BaseMenu, handle_option method is not implemented here."):
+    with pytest.raises(
+        NotImplementedError,
+        match="This is BaseMenu, handle_option method is not implemented here.",
+    ):
         menu.handle_option()

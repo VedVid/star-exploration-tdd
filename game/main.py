@@ -14,7 +14,7 @@ if __name__ == "__main__":
         attack=randint(ATTACK_MIN, ATTACK_MAX),
         defense=randint(DEFENSE_MIN, DEFENSE_MAX),
         cargo_space=randint(CARGO_MIN, CARGO_MAX),
-        max_hp=randint(HP_MIN, HP_MAX)
+        max_hp=randint(HP_MIN, HP_MAX),
     )
     print("\n*********\n")
     print("You boarded your brand-new Explorer-class starship.\nWhere will you go?\n")

@@ -63,4 +63,6 @@ class BaseMenu:
         Children of BaseMenu will use this method to handle options,
         by executing functions binded to the specific options.
         """
-        raise NotImplementedError("This is BaseMenu, handle_option method is not implemented here.")
+        raise NotImplementedError(
+            "This is BaseMenu, handle_option method is not implemented here."
+        )
