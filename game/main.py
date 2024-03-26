@@ -24,3 +24,4 @@ if __name__ == "__main__":
     m.print_separator()
     m.print_header()
     m.print_options()
+    m.take_input()
