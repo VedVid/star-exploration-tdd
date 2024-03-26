@@ -3,7 +3,8 @@
 
 class BaseMenu:
 
-    def __init__(self, options=None):
+    def __init__(self, header, options=None):
+        self.header = header
         self.options = options
         if self.options is None:
             self.options = []
