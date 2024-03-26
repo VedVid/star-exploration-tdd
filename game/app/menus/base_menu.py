@@ -32,12 +32,12 @@ class BaseMenu:
         """Sets menu's header."""
         self.header = header
 
-    def set_options(self, *args):
+    def set_options(self, options):
         """
         Sets menu's options.
-        Takes args tuple as argument, then transforms it to the list and binds to self.options.
+        Takes list as argument and binds to self.options.
         """
-        self.options = list(args)
+        self.options = options
 
     @staticmethod
     def print_separator():
