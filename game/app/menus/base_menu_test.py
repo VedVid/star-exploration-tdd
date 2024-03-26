@@ -19,3 +19,10 @@ def test__should_set_options__when_setter_for_options_called():
     menu.set_options("aaaaa", "bbbbb", "ccccc")
 
     assert len(menu.options) == 3
+
+
+def test__should_raise_not_implemented__when_handle_option_method_called():
+    menu = BaseMenu()
+
+    with pytest.raises(NotImplementedError, match="This is BaseMenu, handle_option method is not implemented here."):
+        menu.handle_option()
