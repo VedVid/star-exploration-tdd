@@ -3,7 +3,7 @@
 
 import pytest
 
-from rooms_generation import RoomsGenerator
+from .rooms_generation import RoomsGenerator
 
 
 def test__should_generate_a_room__when_method_is_called():
