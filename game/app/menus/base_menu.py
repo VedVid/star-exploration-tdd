@@ -3,7 +3,10 @@
 
 class BaseMenu:
 
-    options = []
+    def __init__(self, options=None):
+        self.options = options
+        if self.options is None:
+            self.options = []
 
     def print_options(self):
         if not self.options:
