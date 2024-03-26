@@ -58,6 +58,10 @@ class BaseMenu:
         for index, option in enumerate(self.options, start=1):
             print(f"{index}) {option}")
 
+    def take_input(self):
+        v = input("> ")
+        return v
+
     def handle_option(self):
         """
         Children of BaseMenu will use this method to handle options,

@@ -47,3 +47,13 @@ def test__should_raise_not_implemented__when_handle_option_method_called():
         match="This is BaseMenu, handle_option method is not implemented here.",
     ):
         menu.handle_option()
+
+
+def test__should_take_and_return_input__when_take_input_method_called(monkeypatch):
+    """Testing helper function for taking input."""
+    menu = BaseMenu()
+
+    monkeypatch.setattr('builtins.input', lambda _: "1")
+    result = menu.take_input()
+
+    assert result == "1"
