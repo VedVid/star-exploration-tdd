@@ -39,7 +39,6 @@ class RoomsGenerator:
         room : string
             Randomly chosen room from _rooms class attribute.
         """
-        print(self._rooms_available)
         shuffle(self._rooms_available)
         return self._rooms_available.pop()
 
