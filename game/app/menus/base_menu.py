@@ -8,6 +8,9 @@ class BaseMenu:
         if self.options is None:
             self.options = []
 
+    def set_header(self, header):
+        self.header = header
+
     def set_options(self, *args):
         self.options = args
 
