@@ -3,7 +3,7 @@
 
 import pytest
 
-from base_menu import BaseMenu
+from .base_menu import BaseMenu
 
 
 def test__should_raise_exception__when_empty_options_accessed():
