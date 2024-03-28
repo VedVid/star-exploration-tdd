@@ -10,3 +10,5 @@ class FirstRoomMenu(BaseMenu):
         match option_chosen:
             case "1":
                 return self.options[0]
+            case "2":
+                return self.options[1]
