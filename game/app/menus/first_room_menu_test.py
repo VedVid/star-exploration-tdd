@@ -7,7 +7,7 @@ from .first_room_menu import FirstRoomMenu
 from ..room_types import *
 
 
-def test__should_return_planet_base__when_planet_base_option_chosen(monkeypatch):
+def test__should_return_space_station__when_space_station_option_chosen(monkeypatch):
     menu = FirstRoomMenu()
 
     menu.set_options([SPACE_STATION, PLANET_BASE, SPACE])
