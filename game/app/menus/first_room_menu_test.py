@@ -16,3 +16,14 @@ def test__should_return_space_station__when_space_station_option_chosen(monkeypa
     result = menu.handle_option(chosen)
 
     assert result == SPACE_STATION
+
+
+def test__should_return_planet_base__when_planet_base_option_chosen(monkeypatch):
+    menu = FirstRoomMenu()
+
+    menu.set_options([SPACE_STATION, PLANET_BASE, SPACE])
+    monkeypatch.setattr('builtins.input', lambda _: "2")
+    chosen = menu.take_input()
+    result = menu.handle_option(chosen)
+
+    assert result == PLANET_BASE
