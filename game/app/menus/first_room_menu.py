@@ -12,3 +12,5 @@ class FirstRoomMenu(BaseMenu):
                 return self.options[0]
             case "2":
                 return self.options[1]
+            case "3":
+                return self.options[2]
