@@ -24,5 +24,4 @@ if __name__ == "__main__":
     m.print_separator()
     m.print_header()
     m.print_options()
-    print()
     print(m.handle_option(m.take_input()))
