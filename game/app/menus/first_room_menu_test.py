@@ -38,3 +38,14 @@ def test__should_return_space__when_space_option_chosen(monkeypatch):
     result = menu.handle_option(chosen)
 
     assert result == SPACE
+
+
+def test__should_return_none__when_chosen_option_is_incorrect(monkeypatch):
+    menu = FirstRoomMenu()
+
+    menu.set_options([SPACE_STATION, PLANET_BASE, SPACE])
+    monkeypatch.setattr('builtins.input', lambda _: "999")
+    chosen = menu.take_input()
+    result = menu.handle_option(chosen)
+
+    assert result is None
