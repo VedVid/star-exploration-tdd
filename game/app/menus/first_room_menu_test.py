@@ -8,6 +8,7 @@ from ..room_types import *
 
 
 def test__should_return_space_station__when_space_station_option_chosen(monkeypatch):
+    """Ensure that the correct option is returned on user input. Uses concrete example."""
     menu = FirstRoomMenu()
 
     menu.set_options([SPACE_STATION, PLANET_BASE, SPACE])
@@ -19,6 +20,7 @@ def test__should_return_space_station__when_space_station_option_chosen(monkeypa
 
 
 def test__should_return_planet_base__when_planet_base_option_chosen(monkeypatch):
+    """Ensure that the correct option is returned on user input. Uses concrete example."""
     menu = FirstRoomMenu()
 
     menu.set_options([SPACE_STATION, PLANET_BASE, SPACE])
@@ -30,6 +32,7 @@ def test__should_return_planet_base__when_planet_base_option_chosen(monkeypatch)
 
 
 def test__should_return_space__when_space_option_chosen(monkeypatch):
+    """Ensure that the correct option is returned on user input. Uses concrete example."""
     menu = FirstRoomMenu()
 
     menu.set_options([SPACE_STATION, PLANET_BASE, SPACE])
@@ -41,6 +44,7 @@ def test__should_return_space__when_space_option_chosen(monkeypatch):
 
 
 def test__should_return_none__when_chosen_option_is_incorrect(monkeypatch):
+    """Ensure that handle_option method returns None on incorrect user input."""
     menu = FirstRoomMenu()
 
     menu.set_options([SPACE_STATION, PLANET_BASE, SPACE])
