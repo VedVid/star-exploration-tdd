@@ -31,11 +31,14 @@ class FirstRoomMenu(BaseMenu):
         WARNING: most likely, this method is subject to change in the future. Right now, it just returns the value,
         but probably in the future it will call a function that will move player to the next room.
         """
-        match option_chosen:
-            case "1":
-                return self.options[0]
-            case "2":
-                return self.options[1]
-            case "3":
-                return self.options[2]
-        return None
+        return_value = None
+        try:
+            option_chosen_int = int(option_chosen)
+            if option_chosen_int < 1:
+                return_value = None
+            else:
+                return_value = self.options[int(option_chosen)-1]
+        except IndexError or ValueError:
+            return_value = None
+        finally:
+            return return_value
