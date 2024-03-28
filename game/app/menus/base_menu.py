@@ -63,7 +63,7 @@ class BaseMenu:
         v = input("> ")
         return v
 
-    def handle_option(self):
+    def handle_option(self, option_chosen):
         """
         Children of BaseMenu will use this method to handle options,
         by executing functions binded to the specific options.
