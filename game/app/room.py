@@ -14,6 +14,7 @@ class Room:
         self.doors = doors
         if self.doors is None:
             self.set_doors()
+        self.cargo_list = [1]
 
     def get_room_type(self):
         return self.room_type
