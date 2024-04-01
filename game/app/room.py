@@ -33,7 +33,15 @@ class Room:
         return self.doors
 
     def set_doors(self, doors="random"):
-        if doors == "random":
+        invalid = False
+        if isinstance(doors, list):
+            for door in doors:
+                if door not in ALL_ROOM_TYPES:
+                    invalid = True
+                    break
+        else:
+            invalid = True
+        if doors == "random" or invalid:
             no_of_doors = random.randint(1, len(ALL_ROOM_TYPES))
             self.doors = []
             while len(self.doors) < no_of_doors:
