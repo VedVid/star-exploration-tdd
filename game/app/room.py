@@ -21,3 +21,6 @@ class Room:
         else:
             # Assuming room_type == "random"
             self.room_type = choice(ALL_ROOM_TYPES)
+
+    def get_doors(self):
+        return [1]
