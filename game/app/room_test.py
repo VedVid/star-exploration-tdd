@@ -42,8 +42,9 @@ def test__should_set_random_room_type__when_room_is_instanced_without_room_type_
     assert random_room.room_type in ALL_ROOM_TYPES
 
 
-@mock.patch('random.randint', side_effect=1)
-def test__should_generate_one_door__when_randint_returns_1(mock_randint):
-    room = Room()
+def test__should_generate_one_door__when_randint_returns_1():
+    with mock.patch("random.randint") as randint:
+        randint.return_value = 1
+        room = Room()
 
     assert len(room.get_doors()) == 1
