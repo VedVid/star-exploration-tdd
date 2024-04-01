@@ -98,14 +98,15 @@ class Room:
             self.cargo_list = []
             for cargo in cargo_list:
                 try:
-                    if (
-                        cargo["name"]
-                        and cargo["price_min"]
-                        and cargo["price_max"]
-                        and cargo["price_current"]
-                    ):
-                        self.cargo_list.append(cargo)
-                    else:
+                    try:
+                        if (
+                            cargo["name"]
+                            and cargo["price_min"]
+                            and cargo["price_max"]
+                            and cargo["price_current"]
+                        ):
+                            self.cargo_list.append(cargo)
+                    except KeyError:
                         invalid = True
                 except TypeError:
                     invalid = True
