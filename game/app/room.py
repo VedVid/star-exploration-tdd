@@ -40,10 +40,11 @@ class Room:
         return self.doors
 
     def set_cargo_list(self, cargo_list="random"):
-        try:
+        if isinstance(cargo_list, list):
+            self.cargo_list = []
             for cargo in cargo_list:
                 self.cargo_list.append(cargo)
-        except AttributeError:
+        else:
             cargo_num = random.randint(1, len(ALL_CARGO_TYPES))
             tmp_cargo_types = ALL_CARGO_TYPES[:]
             self.cargo_list = []
