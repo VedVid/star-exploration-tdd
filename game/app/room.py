@@ -29,6 +29,9 @@ class Room:
             # Assuming room_type == "random"
             self.room_type = random.choice(ALL_ROOM_TYPES)
 
+    def get_doors(self):
+        return self.doors
+
     def set_doors(self, doors="random"):
         if doors == "random":
             no_of_doors = random.randint(1, len(ALL_ROOM_TYPES))
@@ -36,8 +39,8 @@ class Room:
             while len(self.doors) < no_of_doors:
                 self.doors.append(random.choice(ALL_ROOM_TYPES))
 
-    def get_doors(self):
-        return self.doors
+    def get_cargo_list(self):
+        return self.cargo_list
 
     def set_cargo_list(self, cargo_list="random"):
         if isinstance(cargo_list, list):
@@ -56,6 +59,3 @@ class Room:
                     new_cargo["price_max"]
                 )
                 self.cargo_list.append(new_cargo)
-
-    def get_cargo_list(self):
-        return self.cargo_list
