@@ -2,6 +2,7 @@
 
 
 import pytest
+import random
 from unittest import mock
 
 from .room import Room
@@ -69,3 +70,15 @@ def test__should_generate_any_cargo__when_class_is_instanced():
     room = Room()
 
     assert len(room.cargo_list) > 0
+
+
+def test__should_generate_specific_set_of_cargos__when_class_is_instanced_with_random_seed_0():
+    random.seed(0)
+    room = Room()
+
+    assert room.cargo_list == [
+        {'name': 'illegal goods', 'price_min': 50, 'price_max': 500, 'price_current': 233},
+        {'name': 'animals', 'price_min': 10, 'price_max': 200, 'price_current': 139},
+        {'name': 'food', 'price_min': 5, 'price_max': 50, 'price_current': 23},
+        {'name': 'industrial crate', 'price_min': 50, 'price_max': 250, 'price_current': 85}
+    ]

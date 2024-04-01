@@ -50,7 +50,6 @@ class Room:
             while len(self.cargo_list) < cargo_num:
                 random.shuffle(tmp_cargo_types)
                 new_cargo = tmp_cargo_types.pop()
-                print(new_cargo)
                 new_cargo["price_current"] = random.randint(
                     new_cargo["price_min"],
                     new_cargo["price_max"]
