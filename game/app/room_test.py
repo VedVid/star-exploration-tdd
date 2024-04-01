@@ -5,6 +5,7 @@ import pytest
 import random
 from unittest import mock
 
+from .cargo_types import *
 from .room import Room
 from .room_types import *
 
@@ -208,3 +209,16 @@ def test__should_return_correct_cargo_list__when_cargo_list_getter_is_called():
             "price_current": 373,
         },
     ]
+
+
+def test__should_set_random_cargo_list__when_argument_passed_to_setter_is_list_with_incorrect_values():
+    """Ensures list with incorrect elements is handled correctly by set_cargo_list method."""
+
+    room = Room()
+
+    room.set_cargo_list(["12434", 12141, [1]])
+    result = room.get_cargo_list()
+
+    for cargo in result:
+        cargo["price_current"] = None
+        assert cargo in ALL_CARGO_TYPES
