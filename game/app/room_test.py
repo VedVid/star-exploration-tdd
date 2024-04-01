@@ -2,7 +2,6 @@
 
 
 import pytest
-import random
 from unittest import mock
 
 from .room import Room
