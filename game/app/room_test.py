@@ -2,6 +2,8 @@
 
 
 import pytest
+import random
+from unittest import mock
 
 from .room import Room
 from .room_types import *
@@ -38,3 +40,10 @@ def test__should_set_random_room_type__when_room_is_instanced_without_room_type_
     random_room = Room()
 
     assert random_room.room_type in ALL_ROOM_TYPES
+
+
+@mock.patch('random.randint', side_effect=1)
+def test__should_generate_one_door__when_randint_returns_1(mock_randint):
+    room = Room()
+
+    assert len(room.get_doors()) == 1
