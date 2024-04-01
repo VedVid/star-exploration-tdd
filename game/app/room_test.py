@@ -222,3 +222,16 @@ def test__should_set_random_cargo_list__when_argument_passed_to_setter_is_list_w
     for cargo in result:
         cargo["price_current"] = None
         assert cargo in ALL_CARGO_TYPES
+
+
+def test__should_set_random_cargo_list__when_argument_passed_to_setter_is_not_list():
+    """Ensures that argument that is not list is handled correctly by set_cargo_list method."""
+
+    room = Room()
+
+    room.set_cargo_list(124134)
+    result = room.get_cargo_list()
+
+    for cargo in result:
+        cargo["price_current"] = None
+        assert cargo in ALL_CARGO_TYPES
