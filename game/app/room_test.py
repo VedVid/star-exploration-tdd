@@ -59,6 +59,30 @@ def test__should_set_random_room_type__when_argument_passed_to_setter_is_invalid
     assert result in ALL_ROOM_TYPES
 
 
+def test__should_set_random_rooms__when_argument_passed_to_setter_is_list_with_incorrect_values():
+    """Ensures list with incorrect elements is handled correctly by set_doors method."""
+
+    room = Room()
+
+    room.set_doors(["12434", 12141, [1]])
+    result = room.get_doors()
+
+    for door in result:
+        assert door in ALL_ROOM_TYPES
+
+
+def test__should_set_random_rooms__when_argument_passed_to_setter_is_not_list():
+    """Ensures that argument that is not list is handled correctly by set_doors method."""
+
+    room = Room()
+
+    room.set_doors(124134)
+    result = room.get_doors()
+
+    for door in result:
+        assert door in ALL_ROOM_TYPES
+
+
 def test__should_generate_one_door__when_randint_returns_1():
     """Ensures the correct amount of generated doors."""
 
