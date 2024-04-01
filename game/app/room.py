@@ -56,3 +56,6 @@ class Room:
                     new_cargo["price_max"]
                 )
                 self.cargo_list.append(new_cargo)
+
+    def get_cargo_list(self):
+        return self.cargo_list
