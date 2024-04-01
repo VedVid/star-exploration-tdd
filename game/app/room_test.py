@@ -63,3 +63,9 @@ def test__should_generate_three_doors__when_randint_returns_3():
         room = Room()
 
     assert len(room.get_doors()) == 3
+
+
+def test__should_generate_any_cargo__when_class_is_instanced():
+    room = Room()
+
+    assert len(room.cargo_list) > 0
