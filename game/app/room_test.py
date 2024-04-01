@@ -82,3 +82,25 @@ def test__should_generate_specific_set_of_cargos__when_class_is_instanced_with_r
         {'name': 'food', 'price_min': 5, 'price_max': 50, 'price_current': 23},
         {'name': 'industrial crate', 'price_min': 50, 'price_max': 250, 'price_current': 85}
     ]
+
+
+def test__should_assign_right_cargo_list__when_list_of_cargo_is_passed_to_set_cargo_list_method():
+    room = Room()
+
+    room.set_cargo_list([
+        {
+    "name": "food",
+    "price_min": 5,
+    "price_max": 50,
+    "price_current": 27,
+        }
+    ])
+
+    assert room.cargo_list == [
+        {
+            "name": "food",
+            "price_min": 5,
+            "price_max": 50,
+            "price_current": 27,
+        }
+    ]
