@@ -48,6 +48,17 @@ def test__should_set_random_room_type__when_room_is_instanced_without_room_type_
     assert random_room.room_type in ALL_ROOM_TYPES
 
 
+def test__should_set_random_room_type__when_argument_passed_to_setter_is_invalid():
+    """Ensures that incorrect argument is handled correctly by set_room_type method."""
+
+    room = Room()
+
+    room.set_room_type(124252352354)
+    result = room.get_room_type()
+
+    assert result in ALL_ROOM_TYPES
+
+
 def test__should_generate_one_door__when_randint_returns_1():
     """Ensures the correct amount of generated doors."""
 
