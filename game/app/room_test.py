@@ -104,3 +104,40 @@ def test__should_assign_right_cargo_list__when_list_of_cargo_is_passed_to_set_ca
             "price_current": 27,
         }
     ]
+
+
+def test__should_return_correct_cargo_list__when_cargo_list_getter_is_called():
+    room = Room()
+
+    room.set_cargo_list(
+        [
+            {
+                "name": "food",
+                "price_min": 5,
+                "price_max": 50,
+                "price_current": 27,
+            },
+            {
+                "name": "illegal goods",
+                "price_min": 50,
+                "price_max": 500,
+                "price_current": 373,
+            }
+        ]
+    )
+    result = room.get_cargo_list()
+
+    assert result == [
+            {
+                "name": "food",
+                "price_min": 5,
+                "price_max": 50,
+                "price_current": 27,
+            },
+            {
+                "name": "illegal goods",
+                "price_min": 50,
+                "price_max": 500,
+                "price_current": 373,
+            }
+        ]
