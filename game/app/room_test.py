@@ -47,3 +47,19 @@ def test__should_generate_one_door__when_randint_returns_1():
         room = Room()
 
     assert len(room.get_doors()) == 1
+
+
+def test__should_generate_two_doors__when_randint_returns_2():
+    with mock.patch("random.randint") as randint:
+        randint.return_value = 2
+        room = Room()
+
+    assert len(room.get_doors()) == 2
+
+
+def test__should_generate_three_doors__when_randint_returns_3():
+    with mock.patch("random.randint") as randint:
+        randint.return_value = 3
+        room = Room()
+
+    assert len(room.get_doors()) == 3
