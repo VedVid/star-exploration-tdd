@@ -37,7 +37,7 @@ class FirstRoomMenu(BaseMenu):
             if option_chosen_int < 1:
                 return_value = None
             else:
-                return_value = self.options[int(option_chosen)-1]
+                return_value = self.options[int(option_chosen) - 1]
         except IndexError or ValueError:
             return_value = None
         finally:

@@ -105,7 +105,6 @@ class Room:
                 random.shuffle(tmp_cargo_types)
                 new_cargo = tmp_cargo_types.pop()
                 new_cargo["price_current"] = random.randint(
-                    new_cargo["price_min"],
-                    new_cargo["price_max"]
+                    new_cargo["price_min"], new_cargo["price_max"]
                 )
                 self.cargo_list.append(new_cargo)
