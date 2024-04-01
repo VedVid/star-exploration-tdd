@@ -10,6 +10,8 @@ from .room_types import *
 
 
 def test__should_return_correct_room_type__when_get_room_type_called():
+    """Ensure that room type getter works correctly."""
+
     room_space_station = Room(SPACE_STATION)
     room_planet_base = Room(PLANET_BASE)
     room_space = Room(SPACE)
@@ -24,6 +26,8 @@ def test__should_return_correct_room_type__when_get_room_type_called():
 
 
 def test__should_set_correct_room_type__when_set_room_type_called_with_correct_room_type():
+    """Ensure that room type setter works correctly."""
+
     room_space_station = Room()
     room_space_station.set_room_type(SPACE_STATION)
     room_planet_base = Room()
@@ -37,12 +41,15 @@ def test__should_set_correct_room_type__when_set_room_type_called_with_correct_r
 
 
 def test__should_set_random_room_type__when_room_is_instanced_without_room_type_argument():
+    """Esnure that when no arguments are provided, game correctly sets the room type at random."""
+
     random_room = Room()
 
     assert random_room.room_type in ALL_ROOM_TYPES
 
 
 def test__should_generate_one_door__when_randint_returns_1():
+    """Ensures the correct amount of generated doors."""
     with mock.patch("random.randint") as randint:
         randint.return_value = 1
         room = Room()
@@ -51,6 +58,7 @@ def test__should_generate_one_door__when_randint_returns_1():
 
 
 def test__should_generate_two_doors__when_randint_returns_2():
+    """Ensures the correct amount of generated doors."""
     with mock.patch("random.randint") as randint:
         randint.return_value = 2
         room = Room()
@@ -59,6 +67,7 @@ def test__should_generate_two_doors__when_randint_returns_2():
 
 
 def test__should_generate_three_doors__when_randint_returns_3():
+    """Ensures the correct amount of generated doors."""
     with mock.patch("random.randint") as randint:
         randint.return_value = 3
         room = Room()
@@ -67,12 +76,14 @@ def test__should_generate_three_doors__when_randint_returns_3():
 
 
 def test__should_generate_any_cargo__when_class_is_instanced():
+    """Ensure that the cargo_list is never empty."""
     room = Room()
 
     assert len(room.cargo_list) > 0
 
 
 def test__should_generate_specific_set_of_cargos__when_class_is_instanced_with_random_seed_0():
+    """Checks if cargo list is correctly created using seeded rng."""
     random.seed(0)
     room = Room()
 
@@ -85,6 +96,7 @@ def test__should_generate_specific_set_of_cargos__when_class_is_instanced_with_r
 
 
 def test__should_assign_right_cargo_list__when_list_of_cargo_is_passed_to_set_cargo_list_method():
+    """Ensures that the cargo list setter works correctly."""
     room = Room()
 
     room.set_cargo_list([
@@ -107,6 +119,7 @@ def test__should_assign_right_cargo_list__when_list_of_cargo_is_passed_to_set_ca
 
 
 def test__should_return_correct_cargo_list__when_cargo_list_getter_is_called():
+    """Ensures that the cargo list getter works correctly."""
     room = Room()
 
     room.set_cargo_list(
