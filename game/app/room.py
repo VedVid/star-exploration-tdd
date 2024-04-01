@@ -93,11 +93,23 @@ class Room:
         Sets list of cargo available for player to purchase.. If "random" or invalid value is passed to this method,
         the cargo list is created randomly.
         """
+        invalid = False
         if isinstance(cargo_list, list):
             self.cargo_list = []
             for cargo in cargo_list:
-                self.cargo_list.append(cargo)
-        else:
+                try:
+                    if (
+                        cargo["name"]
+                        and cargo["price_min"]
+                        and cargo["price_max"]
+                        and cargo["price_current"]
+                    ):
+                        self.cargo_list.append(cargo)
+                    else:
+                        invalid = True
+                except TypeError:
+                    invalid = True
+        elif invalid or not isinstance(cargo_list, list):
             cargo_num = random.randint(1, len(ALL_CARGO_TYPES))
             tmp_cargo_types = ALL_CARGO_TYPES[:]
             self.cargo_list = []
