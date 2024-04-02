@@ -7,13 +7,15 @@ from .room_types import *
 
 class Player:
     """
-    Player class represents all data that is important from the player perspective. Currently it holds only info about
-    current room, in form of instance of Room the player is in.
+    Player class represents all data that is important from the player perspective. Currently it holds info about
+    current room and player's ship.
     In the future, it will also hold info about cargo and money.
 
     Attributes
     ----------
-    room Union[Room | None]
+    ship : Ship
+        Player's ship, with its cargo space, hp, attack and defense.
+    room : Union[Room | None]
         When Player is spawned at the beginning of game, then room is set to None. It gets set to Room intance
         only after player chooses the first destination of their travel.
     """
