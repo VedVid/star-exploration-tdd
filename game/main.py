@@ -4,6 +4,7 @@
 from random import randint
 
 from app.menus.first_room_menu import FirstRoomMenu
+from app.player import Player
 from app.room import Room
 from app.rooms_generation import RoomsGenerator
 from app.ship import Ship
@@ -18,6 +19,8 @@ if __name__ == "__main__":
         cargo_space=randint(CARGO_MIN, CARGO_MAX),
         max_hp=randint(HP_MIN, HP_MAX),
     )
+    player = Player()
+    player.ship = player_ship  # This should be handled by player class.
     rooms = rooms_generator.generate_rooms(randint(1, 3))
     m = FirstRoomMenu()
     m.set_header(
