@@ -25,7 +25,9 @@ class Player:
 
     def set_room(self, room):
         """Sets room to room instance."""
-        if room.room_type in ALL_ROOM_TYPES:
-            self.room = room
+            if room.room_type in ALL_ROOM_TYPES:
+                self.room = room
+            else:
+                raise ValueError("Incorrect room type set.")
         else:
             raise ValueError("Incorrect room type set.")
