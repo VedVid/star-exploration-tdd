@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 
+from .room_types import *
+
+
 class Player:
     def __init__(self):
         self.room = None
@@ -9,4 +12,7 @@ class Player:
         return self.room
 
     def set_room(self, room):
-        self.room = room
+        if room in ALL_ROOM_TYPES:
+            self.room = room
+        else:
+            raise ValueError("Incorrect room type set.")
