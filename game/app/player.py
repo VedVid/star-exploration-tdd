@@ -2,4 +2,5 @@
 
 
 class Player:
-    pass
+    def __init__(self):
+        self.room = None
