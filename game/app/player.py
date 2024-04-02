@@ -46,6 +46,7 @@ class Player:
             raise TypeError("Incorrect type of argument passed.")
 
     def create_ship(self):
+        """Creates random ship. It is used only if player is spawned without ship set in constructor."""
         self.ship = Ship(
             attack=randint(ATTACK_MIN, ATTACK_MAX),
             defense=randint(DEFENSE_MIN, DEFENSE_MAX),
@@ -54,4 +55,5 @@ class Player:
         )
 
     def get_ship(self):
+        """Returns player's ship. Should always return Ship instance."""
         return self.ship
