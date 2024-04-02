@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
+from .room import Room
 from .room_types import *
 
 
@@ -25,9 +26,10 @@ class Player:
 
     def set_room(self, room):
         """Sets room to room instance."""
+        if isinstance(room, Room):
             if room.room_type in ALL_ROOM_TYPES:
                 self.room = room
             else:
                 raise ValueError("Incorrect room type set.")
         else:
-            raise ValueError("Incorrect room type set.")
+            raise TypeError("Incorrect type of argument passed.")
