@@ -17,12 +17,6 @@ class Player:
 
     Attributes
     ----------
-<<<<<<< HEAD
-=======
-    ship : Ship
-        Player's ship, with its cargo space, hp, attack and defense. Since player won't change the ship during
-        the gameplay, there is no setter method for setting ship.
->>>>>>> origin/feature-bind-ship-to-player
     room : Union[Room | None]
         When Player is spawned at the beginning of game, then room is set to None. It gets set to Room intance
         only after player chooses the first destination of their travel.
