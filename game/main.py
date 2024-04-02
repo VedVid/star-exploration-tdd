@@ -33,8 +33,9 @@ if __name__ == "__main__":
     new_location = m.handle_option(m.take_input())
 
     new_room = Room(room_type=new_location)
+    player.set_room(new_room)
     from pprint import pprint
-    pprint(new_room)
-    pprint(new_room.room_type)
-    pprint(new_room.doors)
-    pprint(new_room.cargo_list)
+    pprint(player.room)
+    pprint(player.room.room_type)
+    pprint(player.room.doors)
+    pprint(player.room.cargo_list)
