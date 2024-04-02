@@ -22,3 +22,12 @@ def test__should_set_player_room__when_player_travels():
     result = player.room
 
     assert result == PLANET_BASE
+
+
+def test__should_return_player_room__when_getter_is_called():
+    player = Player()
+
+    player.set_room(PLANET_BASE)
+    result = player.get_room()
+
+    assert result == PLANET_BASE
