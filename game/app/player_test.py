@@ -4,6 +4,7 @@
 import pytest
 
 from .player import Player
+from .room import Room
 from .room_types import *
 
 
@@ -17,11 +18,12 @@ def test__should_player_location_be_set_as_none__when_game_starts():
 
 def test__should_set_player_room__when_player_travels():
     player = Player()
+    room = Room(room_type=PLANET_BASE)
 
-    player.set_room(PLANET_BASE)
+    player.set_room(room)
     result = player.room
 
-    assert result == PLANET_BASE
+    assert result.room_type == PLANET_BASE
 
 
 def test__should_raise_exception__when_incorrect_type_of_argument_passed_to_room_setter():
