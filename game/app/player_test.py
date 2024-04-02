@@ -9,6 +9,8 @@ from .room_types import *
 
 
 def test__should_player_location_be_set_as_none__when_game_starts():
+    """Checks if player.room is always set to None at the moment of spawn."""
+
     player = Player()
 
     result = player.room
@@ -17,6 +19,8 @@ def test__should_player_location_be_set_as_none__when_game_starts():
 
 
 def test__should_set_player_room__when_player_travels():
+    """Ensures that the player.room is set correctly after player changes location."""
+
     player = Player()
     room = Room(room_type=PLANET_BASE)
 
@@ -27,6 +31,8 @@ def test__should_set_player_room__when_player_travels():
 
 
 def test__should_raise_value_error__when_room_with_invalid_room_type_set_is_passed_as_argument_to_room_setter():
+    """Checks if game correctly raises ValueError if Room with incorrect data is passed to the room setter."""
+
     player = Player()
     room = Room(room_type=PLANET_BASE)
     room.room_type = "Incorrect Room Type"
@@ -36,6 +42,8 @@ def test__should_raise_value_error__when_room_with_invalid_room_type_set_is_pass
 
 
 def test__should_raise_type_error__when_invalid_type_of_argument_is_passed_to_room_setter():
+    """Checks if game correctly raises TypeError if argument other than Room is passed to the room setter."""
+
     player = Player()
 
     with pytest.raises(TypeError, match="Incorrect type of argument passed."):
@@ -43,6 +51,8 @@ def test__should_raise_type_error__when_invalid_type_of_argument_is_passed_to_ro
 
 
 def test__should_return_player_room__when_getter_is_called():
+    """Tests player room getter."""
+
     player = Player()
     room = Room(room_type=PLANET_BASE)
 
