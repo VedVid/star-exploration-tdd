@@ -6,6 +6,15 @@ import pytest
 from .player import Player
 from .room import Room
 from .room_types import *
+from .ship import Ship
+
+
+def test__should_game_create_random_ship__when_player_is_spawned_without_ship_passed_to_the_constructor():
+    """Ensures that player always spawn with Ship, even if Ship is not passed to constructor."""
+
+    player = Player()
+
+    assert player.ship is not None
 
 
 def test__should_player_location_be_set_as_none__when_game_starts():
