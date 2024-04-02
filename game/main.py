@@ -4,6 +4,7 @@
 from random import randint
 
 from app.menus.first_room_menu import FirstRoomMenu
+from app.room import Room
 from app.rooms_generation import RoomsGenerator
 from app.ship import Ship
 from app.ship_variables import *
@@ -26,4 +27,11 @@ if __name__ == "__main__":
     m.print_separator()
     m.print_header()
     m.print_options()
-    print(m.handle_option(m.take_input()))
+    new_location = m.handle_option(m.take_input())
+
+    new_room = Room(room_type=new_location)
+    from pprint import pprint
+    pprint(new_room)
+    pprint(new_room.room_type)
+    pprint(new_room.doors)
+    pprint(new_room.cargo_list)
