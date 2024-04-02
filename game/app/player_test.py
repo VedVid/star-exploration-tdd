@@ -27,6 +27,17 @@ def test__should_set_ship_correctly__when_ship_is_passed_as_argument_to_construc
     assert player.ship is ship
 
 
+def test__should_get_correct_ship_info__when_ship_getter_is_called():
+    """Check if ship getter works correctly."""
+
+    ship = Ship()
+    player = Player(ship)
+
+    result = player.get_ship()
+
+    assert result == ship
+
+
 def test__should_player_location_be_set_as_none__when_game_starts():
     """Checks if player.room is always set to None at the moment of spawn."""
 
