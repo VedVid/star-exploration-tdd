@@ -24,6 +24,13 @@ def test__should_set_player_room__when_player_travels():
     assert result == PLANET_BASE
 
 
+def test__should_raise_exception__when_incorrect_type_of_argument_passed_to_room_setter():
+    player = Player()
+
+    with pytest.raises(ValueError, match="Incorrect room type set."):
+        player.set_room([12325])
+
+
 def test__should_return_player_room__when_getter_is_called():
     player = Player()
 
