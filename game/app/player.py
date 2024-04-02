@@ -1,25 +1,35 @@
 # -*- coding: utf-8 -*-
 
 
+from random import randint
+
 from .room import Room
 from .room_types import *
+from .ship import Ship
+from .ship_variables import *
 
 
 class Player:
     """
-    Player class represents all data that is important from the player perspective. Currently it holds only info about
-    current room, in form of instance of Room the player is in.
+    Player class represents all data that is important from the player perspective. Currently it holds info about
+    current room and player's ship.
     In the future, it will also hold info about cargo and money.
 
     Attributes
     ----------
-    room Union[Room | None]
+    room : Union[Room | None]
         When Player is spawned at the beginning of game, then room is set to None. It gets set to Room intance
         only after player chooses the first destination of their travel.
+    ship : Ship
+        Player's ship, with its cargo space, hp, attack and defense. Since player won't change the ship during
+        the gameplay, there is no setter method for setting ship.
     """
 
-    def __init__(self):
+    def __init__(self, ship=None):
         self.room = None
+        self.ship = ship
+        if self.ship is None:
+            self.create_ship()
 
     def get_room(self):
         """Gets None or instance of Room in which player currently is."""
@@ -34,3 +44,16 @@ class Player:
                 raise ValueError("Incorrect room type set.")
         else:
             raise TypeError("Incorrect type of argument passed.")
+
+    def create_ship(self):
+        """Creates random ship. It is used only if player is spawned without ship set in constructor."""
+        self.ship = Ship(
+            attack=randint(ATTACK_MIN, ATTACK_MAX),
+            defense=randint(DEFENSE_MIN, DEFENSE_MAX),
+            cargo_space=randint(CARGO_MIN, CARGO_MAX),
+            max_hp=randint(HP_MIN, HP_MAX),
+        )
+
+    def get_ship(self):
+        """Returns player's ship. Should always return Ship instance."""
+        return self.ship
