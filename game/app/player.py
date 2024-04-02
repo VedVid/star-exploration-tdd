@@ -52,3 +52,6 @@ class Player:
             cargo_space=randint(CARGO_MIN, CARGO_MAX),
             max_hp=randint(HP_MIN, HP_MAX),
         )
+
+    def get_ship(self):
+        return self.ship
