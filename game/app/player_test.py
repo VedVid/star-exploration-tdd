@@ -35,6 +35,13 @@ def test__should_raise_value_error__when_room_with_invalid_room_type_set_is_pass
         player.set_room(room)
 
 
+def test__should_raise_type_error__when_invalid_type_of_argument_is_passed_to_room_setter():
+    player = Player()
+
+    with pytest.raises(TypeError, match="Incorrect type of argument passed."):
+        player.set_room("dgsg")
+
+
 def test__should_return_player_room__when_getter_is_called():
     player = Player()
     room = Room(room_type=PLANET_BASE)
