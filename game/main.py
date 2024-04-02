@@ -13,14 +13,13 @@ from app.ship_variables import *
 
 if __name__ == "__main__":
     rooms_generator = RoomsGenerator()
-    player_ship = Ship(
+    ship = Ship(
         attack=randint(ATTACK_MIN, ATTACK_MAX),
         defense=randint(DEFENSE_MIN, DEFENSE_MAX),
         cargo_space=randint(CARGO_MIN, CARGO_MAX),
         max_hp=randint(HP_MIN, HP_MAX),
     )
-    player = Player()
-    player.ship = player_ship  # This should be handled by player class.
+    player = Player(ship=ship)
     rooms = rooms_generator.generate_rooms(randint(1, 3))
     m = FirstRoomMenu()
     m.set_header(
