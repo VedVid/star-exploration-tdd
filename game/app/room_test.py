@@ -229,12 +229,16 @@ def test__should_set_random_cargo_list__when_argument_passed_to_setter_is_list_w
 
     room = Room()
 
-    room.set_cargo_list([{
-    "name": "food",
-    "prince_min": 5,
-    "price_maaax": 50,
-    "price_current": None,
-}])
+    room.set_cargo_list(
+        [
+            {
+                "name": "food",
+                "prince_min": 5,
+                "price_maaax": 50,
+                "price_current": None,
+            }
+        ]
+    )
     result = room.get_cargo_list()
 
     for cargo in result:
