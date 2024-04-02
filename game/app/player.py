@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 
 
+from random import randint
+
 from .room import Room
 from .room_types import *
+from .ship import Ship
+from .ship_variables import *
 
 
 class Player:
@@ -20,8 +24,11 @@ class Player:
         only after player chooses the first destination of their travel.
     """
 
-    def __init__(self):
+    def __init__(self, ship=None):
         self.room = None
+        self.ship = ship
+        if self.ship is None:
+            self.create_ship()
 
     def get_room(self):
         """Gets None or instance of Room in which player currently is."""
@@ -36,3 +43,11 @@ class Player:
                 raise ValueError("Incorrect room type set.")
         else:
             raise TypeError("Incorrect type of argument passed.")
+
+    def create_ship(self):
+        self.ship = Ship(
+            attack=randint(ATTACK_MIN, ATTACK_MAX),
+            defense=randint(DEFENSE_MIN, DEFENSE_MAX),
+            cargo_space=randint(CARGO_MIN, CARGO_MAX),
+            max_hp=randint(HP_MIN, HP_MAX),
+        )
