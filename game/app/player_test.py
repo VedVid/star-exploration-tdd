@@ -26,6 +26,7 @@ def test__should_set_ship_correctly__when_ship_is_passed_as_argument_to_construc
 
     assert player.ship is ship
 
+
 def test__should_player_location_be_set_as_none__when_game_starts():
     """Checks if player.room is always set to None at the moment of spawn."""
 
