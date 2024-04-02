@@ -17,6 +17,7 @@ class Player:
         When Player is spawned at the beginning of game, then room is set to None. It gets set to Room intance
         only after player chooses the first destination of their travel.
     """
+
     def __init__(self):
         self.room = None
 
