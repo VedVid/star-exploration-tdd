@@ -17,6 +17,15 @@ def test__should_game_create_random_ship__when_player_is_spawned_without_ship_pa
     assert player.ship is not None
 
 
+def test__should_set_ship_correctly__when_ship_is_passed_as_argument_to_constructor():
+    """Player should have the custom ship if this ship is passed as argument to constructor during instancing."""
+
+    ship = Ship()
+
+    player = Player(ship)
+
+    assert player.ship is ship
+
 def test__should_player_location_be_set_as_none__when_game_starts():
     """Checks if player.room is always set to None at the moment of spawn."""
 
