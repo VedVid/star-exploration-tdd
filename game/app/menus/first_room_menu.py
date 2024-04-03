@@ -6,7 +6,7 @@ from .base_menu import BaseMenu
 
 class FirstRoomMenu(BaseMenu):
     """
-    FirstRoomMenu inherits BaseMenu and all of its basic behaviours, with exception for handle_option method.
+    FirstRoomMenu inherits BaseMenu and all of its basic behaviours, with exception for handle_input_taken method.
     FirstRoomMenu is a special kind of menu that is present only in the first room, at the very beginning of game.
     It might be replaced by more generic menu class in the future.
 
