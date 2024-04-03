@@ -63,11 +63,10 @@ class BaseMenu:
         v = input("> ")
         return v
 
-    def handle_option(self, option_chosen):
+    def handle_input_taken(self, input_taken):
         """
-        Children of BaseMenu will use this method to handle options,
-        by executing functions binded to the specific options.
+        Children of BaseMenu will use this method to input taken by `take_input` method.
         """
         raise NotImplementedError(
-            "This is BaseMenu, handle_option method is not implemented here."
+            "This is BaseMenu, handle_input_taken method is not implemented here."
         )
