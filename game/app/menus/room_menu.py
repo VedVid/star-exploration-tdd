@@ -24,4 +24,4 @@ class RoomMenu(BaseMenu):
 
     def handle_option(self, option):
         if option == "Travel to destination":
-            return ["space station", "planet base"]
+            return self.room.get_doors()
