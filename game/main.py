@@ -29,7 +29,7 @@ if __name__ == "__main__":
     m.print_separator()
     m.print_header()
     m.print_options()
-    new_location = m.handle_option(m.take_input())
+    new_location = m.handle_input_taken(m.take_input())
 
     new_room = Room(room_type=new_location)
     player.set_room(new_room)

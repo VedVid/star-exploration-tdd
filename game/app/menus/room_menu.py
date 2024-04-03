@@ -2,12 +2,13 @@
 
 
 from .base_menu import BaseMenu
+from ..room_options import *
 
 
 class RoomMenu(BaseMenu):
     def __init__(self, room):
         self.room = room
-        super().__init__(self.room.room_type, options=["Travel to destination", "Buy cargo", "Sell cargo"])
+        super().__init__(self.room.room_type, options=ALL_ROOM_OPTIONS)
 
     def handle_input_taken(self, input_taken):
         option_returned = None
