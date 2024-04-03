@@ -28,8 +28,6 @@ class FirstRoomMenu(BaseMenu):
     def handle_input_taken(self, input_taken):
         """
         Returns option from self.options according to the user input.
-        WARNING: most likely, this method is subject to change in the future. Right now, it just returns the value,
-        but probably in the future it will call a function that will move player to the next room.
         """
         return_value = None
         try:

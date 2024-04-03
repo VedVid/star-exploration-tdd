@@ -29,10 +29,12 @@ class Room:
 
     Attributes
     ----------
-    header : str
-        Header of the menu. Will be printed on the top, in all-caps.
-    options : Union[list | None]
-        List of options that will be printed (and handled by the children of this class).
+    room_type " Union[str | None]
+        Behaviour described in "Parameters".
+    doors : Union[list | None]
+        Behaviour described in "Parameters".
+    cargo_list : Union[list | None]
+        Behaviour described in "Parameters".
     """
 
     def __init__(self, room_type=None, doors=None, cargo_list=None):
