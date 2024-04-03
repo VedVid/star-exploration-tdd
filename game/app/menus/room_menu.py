@@ -5,8 +5,9 @@ from .base_menu import BaseMenu
 
 
 class RoomMenu(BaseMenu):
-    def __init__(self, header=""):
-        super().__init__(header, options=["Travel to destination", "Buy cargo", "Sell cargo"])
+    def __init__(self, room):
+        self.room = room
+        super().__init__(self.room.room_type, options=["Travel to destination", "Buy cargo", "Sell cargo"])
 
     def handle_option(self, option_chosen):
         option_returned = None
