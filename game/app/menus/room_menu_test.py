@@ -13,6 +13,6 @@ def test__should_return_list_of_travel_destinations__when_player_choose_first_op
     menu = RoomMenu(room=room)
 
     monkeypatch.setattr("builtins.input", lambda _: "1")
-    result = menu.handle_option(menu.take_input())
+    result = menu.handle_input_taken(menu.take_input())
 
     assert result == [SPACE_STATION, PLANET_BASE]
