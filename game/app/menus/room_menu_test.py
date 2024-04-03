@@ -9,6 +9,7 @@ from ..room_types import *
 
 
 def test__should_return_list_of_travel_destinations__when_player_choose_first_option(monkeypatch):
+    """Checks if menu returns correct rooms."""
     room = Room(doors=[SPACE_STATION, PLANET_BASE])
     menu = RoomMenu(room=room)
 
