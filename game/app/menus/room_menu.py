@@ -20,5 +20,8 @@ class RoomMenu(BaseMenu):
         except IndexError or ValueError:
             option_returned = None
         finally:
-            if option_returned == "Travel to destination":
-                return ["space station", "planet base"]
+            return self.handle_option(option_returned)
+
+    def handle_option(self, option):
+        if option == "Travel to destination":
+            return ["space station", "planet base"]
