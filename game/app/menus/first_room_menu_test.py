@@ -47,7 +47,7 @@ def test__should_return_space__when_space_option_chosen(monkeypatch):
 
 
 def test__should_return_none__when_chosen_option_is_incorrect(monkeypatch):
-    """Ensure that handle_option method returns None when incorrect option is chosen."""
+    """Ensure that handle_input_taken method returns None when incorrect option is chosen."""
 
     menu = FirstRoomMenu()
 
@@ -60,7 +60,7 @@ def test__should_return_none__when_chosen_option_is_incorrect(monkeypatch):
 
 
 def test__should_return_none__when_input_is_incorrect(monkeypatch):
-    """Ensure that handle_option method returns None on incorrect type of user input."""
+    """Ensure that handle_input_taken method returns None on incorrect type of user input."""
 
     menu = FirstRoomMenu()
 
@@ -73,7 +73,7 @@ def test__should_return_none__when_input_is_incorrect(monkeypatch):
 
 
 def test__should_return_none__when_input_is_number_lesser_than_one(monkeypatch):
-    """Ensure that handle_option method returns None on incorrect number entered by user."""
+    """Ensure that handle_input_taken method returns None on incorrect number entered by user."""
 
     menu = FirstRoomMenu()
 
