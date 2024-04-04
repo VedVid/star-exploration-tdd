@@ -8,6 +8,7 @@ from app.menus.room_menu import RoomMenu
 from app.player import Player
 from app.room import Room
 from app.rooms_generation import RoomsGenerator
+from app.room_types import *
 from app.ship import Ship
 from app.ship_variables import *
 
@@ -33,11 +34,21 @@ if __name__ == "__main__":
     new_location = m.handle_input_taken(m.take_input())
 
     while True:
-        new_room = Room(room_type=new_location)
-        player.set_room(new_room)
-        m = RoomMenu(new_room)
-        m.print_separator()
-        m.print_header()
-        m.print_options()
-        option_chosen = m.handle_input_taken(m.take_input())
-        print(option_chosen)
+        if isinstance(m, FirstRoomMenu):
+            new_room = Room(room_type=new_location)
+            player.set_room(new_room)
+            m = RoomMenu(new_room)
+        else:
+            m.print_separator()
+            m.print_header()
+            m.print_options()
+            option_chosen = m.handle_input_taken(m.take_input())
+            if isinstance(m, RoomMenu):
+                if option_chosen[0] in ALL_ROOM_TYPES:
+                    # m = TravelMenu(args_here)
+                    print("...print TravelMenu here...")
+                    pass
+                # elif player wants to buy
+                # elif player wants to sell
+            # elif isinstance(m, BuyMenu)
+            # elif isinstance(m, SellMenu)
