@@ -4,6 +4,7 @@
 from random import randint
 
 from app.menus.first_room_menu import FirstRoomMenu
+from app.menus.room_menu import RoomMenu
 from app.player import Player
 from app.room import Room
 from app.rooms_generation import RoomsGenerator
@@ -31,10 +32,12 @@ if __name__ == "__main__":
     m.print_options()
     new_location = m.handle_input_taken(m.take_input())
 
-    new_room = Room(room_type=new_location)
-    player.set_room(new_room)
-    from pprint import pprint
-    pprint(player.room)
-    pprint(player.room.room_type)
-    pprint(player.room.doors)
-    pprint(player.room.cargo_list)
+    while True:
+        new_room = Room(room_type=new_location)
+        player.set_room(new_room)
+        m = RoomMenu(new_room)
+        m.print_separator()
+        m.print_header()
+        m.print_options()
+        option_chosen = m.handle_input_taken(m.take_input())
+        print(option_chosen)
