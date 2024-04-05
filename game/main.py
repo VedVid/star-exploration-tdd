@@ -5,6 +5,7 @@ from random import randint
 
 from app.menus.first_room_menu import FirstRoomMenu
 from app.menus.room_menu import RoomMenu
+from app.menus.travel_menu import TravelMenu
 from app.player import Player
 from app.room import Room
 from app.rooms_generation import RoomsGenerator
@@ -32,6 +33,7 @@ if __name__ == "__main__":
     m.print_header()
     m.print_options()
     new_location = m.handle_input_taken(m.take_input())
+    new_room = None
 
     while True:
         if isinstance(m, FirstRoomMenu):
@@ -45,9 +47,9 @@ if __name__ == "__main__":
             option_chosen = m.handle_input_taken(m.take_input())
             if isinstance(m, RoomMenu):
                 if option_chosen[0] in ALL_ROOM_TYPES:
-                    # m = TravelMenu(args_here)
-                    print("...print TravelMenu here...")
-                    pass
+                    m = TravelMenu(new_room)
+            elif isinstance(m, TravelMenu):
+                print(option_chosen)
                 # elif player wants to buy
                 # elif player wants to sell
             # elif isinstance(m, BuyMenu)
