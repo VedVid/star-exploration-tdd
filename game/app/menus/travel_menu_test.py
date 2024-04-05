@@ -9,6 +9,8 @@ from .travel_menu import TravelMenu
 
 
 def test__should_return_destination__when_a_door_is_chosen(monkeypatch):
+    """Checks if menu returns correct door."""
+
     room = Room(doors=ALL_ROOM_TYPES)
     menu = TravelMenu(room)
 
@@ -54,4 +56,3 @@ def test__should_return_none__when_input_is_incorrect(monkeypatch):
     result = menu.handle_input_taken(menu.take_input())
 
     assert result is None
-    
