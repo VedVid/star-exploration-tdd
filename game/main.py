@@ -49,7 +49,8 @@ if __name__ == "__main__":
                 if option_chosen[0] in ALL_ROOM_TYPES:
                     m = TravelMenu(new_room)
             elif isinstance(m, TravelMenu):
-                print(option_chosen)
+                new_room = Room(room_type=option_chosen)
+                m = RoomMenu(new_room)
                 # elif player wants to buy
                 # elif player wants to sell
             # elif isinstance(m, BuyMenu)
